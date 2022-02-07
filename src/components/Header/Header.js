@@ -20,11 +20,12 @@ function Header(props) {
         />
         <span>corneliusventi.dev</span>
       </div>
-      <div title="Theme" onClick={props.onThemeChange} className="theme">
+      <div title="Theme" className="theme">
         <img
           alt="theme icon"
           className="icon"
           src={props.theme === "dark" ? darkicon : lighticon}
+          onClick={props.onThemeChange}
         />
       </div>
     </header>
