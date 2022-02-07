@@ -11,17 +11,25 @@ function Command(props) {
         {command.output.text}
       </a>
     );
+  } else if (command.output.type === "links") {
+    output = command.output.links.map((link, index) => (
+      <div key={index}>
+        <a target="_blank" href={link.link} rel="noreferrer">
+          {link.text}
+        </a>
+      </div>
+    ));
   } else {
-    output = "output not supported";
+    output = "output type not supported";
   }
 
   return (
     <div className="command">
-      <div className="input">{"> cornel --" + command.input}</div>
-      <div className="output">
-        <span className="arrow">{"=>"}</span>
-        {output}
+      <div className="input">
+        <span className="arrow">{"-> "}</span>
+        {command.input}
       </div>
+      <div className="output">{output}</div>
     </div>
   );
 }

@@ -3,13 +3,13 @@
   width: auto;
   margin: 20px;
   margin-bottom: 10px;
-  margin-right: 5px;
+  margin-right: 7.5px;
   overflow-y: auto;
   overflow-wrap: break-word;
 }
 
 .terminal::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* background of the scrollbar except button or resizer */
@@ -19,7 +19,7 @@
 
 /* scrollbar itself */
 .terminal::-webkit-scrollbar-thumb {
-  background-color: #151718;
+  background-color: #00b2ff;
   border-radius: 16px;
 }
 
@@ -28,8 +28,30 @@
   display: none;
 }
 
-/* scrollbar itself */
-.terminal.dark::-webkit-scrollbar-thumb {
-  background-color: white;
-  border-radius: 16px;
+.terminal .arrow {
+  color: #00b2ff;
+}
+
+.prompt {
+  background-color: rgb(0 0 0 / 0%);
+  outline: none;
+  border: none;
+  color: #151718;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  caret-color: #151718;
+  padding: 0;
+}
+
+.prompt.dark {
+  color: white;
+  caret-color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .terminal {
+    margin: 10px;
+    margin-right: 7.5px;
+  }
 }

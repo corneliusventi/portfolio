@@ -9,13 +9,8 @@
 .output {
   position: relative;
   vertical-align: text-top;
-  padding-left: 50px;
+  padding-left: 30px;
   white-space: pre-line;
-}
-
-.output .arrow {
-  position: absolute;
-  left: 20px;
 }
 
 .output a {

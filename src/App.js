@@ -5,15 +5,23 @@ import { useState } from "react";
 
 function App() {
   const [theme, setTheme] = useState("dark");
+  let promptEl;
 
   const handleThemeChange = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  const setPromptEl = (el) => {
+    promptEl = el;
+  };
+
   return (
-    <div className={`container ${theme === "dark" ? "dark" : ""}`}>
+    <div
+      className={`container ${theme === "dark" ? "dark" : ""}`}
+      onClick={() => promptEl.focus()}
+    >
       <Header theme={theme} onThemeChange={handleThemeChange} />
-      <Terminal theme={theme} />
+      <Terminal theme={theme} setPromptEl={setPromptEl} />
     </div>
   );
 }
