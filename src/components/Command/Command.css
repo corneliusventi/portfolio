@@ -1,0 +1,23 @@
+.command {
+  padding-bottom: 10px;
+}
+
+.input {
+  padding-bottom: 5px;
+}
+
+.output {
+  position: relative;
+  vertical-align: text-top;
+  padding-left: 50px;
+  white-space: pre-line;
+}
+
+.output .arrow {
+  position: absolute;
+  left: 20px;
+}
+
+.output a {
+  color: #00b2ff;
+}

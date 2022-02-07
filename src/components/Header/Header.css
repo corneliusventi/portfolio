@@ -1,0 +1,61 @@
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+}
+
+.minimize,
+.maximize,
+.close {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.minimize {
+  background: #ffbd2e;
+  border: 0.5px solid #dea123;
+}
+.maximize {
+  background: #27c93f;
+  border: 0.5px solid #1aab29;
+}
+.close {
+  background: #ff5f56;
+  border: 0.5px solid #e0443e;
+}
+
+.title {
+  flex-grow: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title span {
+  margin: 0 10px;
+}
+
+.theme {
+  cursor: pointer;
+  width: 80px;
+  text-align: right;
+}
+
+.theme .icon,
+.title .logo {
+  height: 20px;
+  width: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    display: none;
+  }
+}

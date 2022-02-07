@@ -1,0 +1,35 @@
+.terminal {
+  height: auto;
+  width: auto;
+  margin: 20px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+}
+
+.terminal::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* background of the scrollbar except button or resizer */
+.terminal::-webkit-scrollbar-track {
+  background-color: rgb(255 255 255 / 0%);
+}
+
+/* scrollbar itself */
+.terminal::-webkit-scrollbar-thumb {
+  background-color: #151718;
+  border-radius: 16px;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.terminal::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* scrollbar itself */
+.terminal.dark::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 16px;
+}
