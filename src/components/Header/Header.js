@@ -15,16 +15,18 @@ function Header(props) {
       <div className="title">
         <img
           className="logo"
+          alt="logo"
           src={props.theme === "dark" ? darklogo : lightlogo}
         />
         <span>corneliusventi.dev</span>
       </div>
-      <a title="Theme" onClick={props.onThemeChange} className="theme">
+      <div title="Theme" onClick={props.onThemeChange} className="theme">
         <img
+          alt="theme icon"
           className="icon"
           src={props.theme === "dark" ? darkicon : lighticon}
         />
-      </a>
+      </div>
     </header>
   );
 }

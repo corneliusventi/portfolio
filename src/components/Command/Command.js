@@ -7,7 +7,7 @@ function Command(props) {
     output = command.output.text;
   } else if (command.output.type === "link") {
     output = (
-      <a target="_blank" href={command.output.link}>
+      <a target="_blank" href={command.output.link} rel="noreferrer">
         {command.output.text}
       </a>
     );
