@@ -15,7 +15,7 @@ function Terminal(props) {
     setPrompt(event.target.value);
   };
 
-  const handleKeyUp = (event) => {
+  const handleKeyDown = (event) => {
     if (event.key === "Enter" && prompt) {
       let isCommandExist = commands.find((command) => command.input === prompt);
       let newCommand;
@@ -51,6 +51,16 @@ function Terminal(props) {
         setLastHistory(lastHistory + 1);
       } else {
         setLastHistory(null);
+      }
+    } else if (event.key === "Tab") {
+      event.preventDefault();
+
+      const command = commands.find((command) =>
+        command.input.startsWith(prompt)
+      );
+
+      if (command) {
+        setPrompt(command.input);
       }
     }
   };
@@ -88,7 +98,7 @@ function Terminal(props) {
           type="text"
           value={prompt}
           onChange={handlePrompt}
-          onKeyUp={handleKeyUp}
+          onKeyDown={handleKeyDown}
           ref={(el) => {
             promptEl = el;
           }}
