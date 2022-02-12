@@ -6,7 +6,7 @@ import beepSound from "../../assets/beep.mp3";
 import useSound from "use-sound";
 
 function Terminal(props) {
-  const [beep] = useSound(beepSound);
+  const [beep] = useSound(beepSound, { volume: 0.5 });
   const [history, setHistory] = useState([
     commands.find((command) => command.input === "welcome"),
   ]);
@@ -62,7 +62,7 @@ function Terminal(props) {
         command.input.startsWith(prompt)
       );
 
-      if (command) {
+      if (prompt && command) {
         setPrompt(command.input);
       } else {
         beep();
