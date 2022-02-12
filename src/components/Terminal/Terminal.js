@@ -2,8 +2,11 @@ import "./Terminal.css";
 import commands from "../../assets/commands";
 import Command from "../Command/Command";
 import { useEffect, useRef, useState } from "react";
+import pop from "../../assets/pop.mp3";
+import useSound from "use-sound";
 
 function Terminal(props) {
+  const [playSound] = useSound(pop);
   const [history, setHistory] = useState([
     commands.find((command) => command.input === "welcome"),
   ]);
@@ -61,6 +64,8 @@ function Terminal(props) {
 
       if (command) {
         setPrompt(command.input);
+      } else {
+        playSound();
       }
     }
   };
