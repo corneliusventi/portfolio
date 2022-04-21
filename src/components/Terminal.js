@@ -1,12 +1,11 @@
-import "./Terminal.css";
-import commands from "../../assets/commands";
-import Command from "../Command/Command";
 import { useEffect, useRef, useState } from "react";
-import beepSound from "../../assets/beep.mp3";
 import useSound from "use-sound";
+import commands from "../assets/commands";
+import styles from "../styles/Terminal.module.css";
+import Command from "./Command";
 
 function Terminal(props) {
-  const [beep] = useSound(beepSound, { volume: 0.5 });
+  const [beep] = useSound("/beep.mp3", { volume: 0.5 });
   const [history, setHistory] = useState([
     commands.find((command) => command.input === "welcome"),
   ]);
@@ -88,7 +87,9 @@ function Terminal(props) {
 
   return (
     <div
-      className={`terminal ${props.theme === "dark" ? "dark" : ""}`}
+      className={`${styles.terminal} ${
+        props.theme === "dark" ? styles.dark : ""
+      }`}
       onClick={() => promptEl.focus()}
     >
       {Array.isArray(history)
@@ -97,9 +98,11 @@ function Terminal(props) {
           })
         : ""}
       <div>
-        <span className="arrow">{"-> "}</span>
+        <span className={styles.arrow}>{"-> "}</span>
         <input
-          className={`prompt ${props.theme === "dark" ? "dark" : ""}`}
+          className={`${styles.prompt} ${
+            props.theme === "dark" ? styles.dark : ""
+          }`}
           type="text"
           value={prompt}
           onChange={handlePrompt}

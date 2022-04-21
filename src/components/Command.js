@@ -1,4 +1,4 @@
-import "./Command.css";
+import styles from "../styles/Command.module.css";
 
 function Command(props) {
   const command = props.command;
@@ -24,12 +24,12 @@ function Command(props) {
   }
 
   return (
-    <div className="command">
-      <div className="input">
-        <span className="arrow">{"-> "}</span>
+    <div className={styles.command}>
+      <div className={styles.input}>
+        <span className={styles.arrow}>{"-> "}</span>
         {command.input}
       </div>
-      <div className="output">{output}</div>
+      <div className={styles.output}>{output}</div>
     </div>
   );
 }

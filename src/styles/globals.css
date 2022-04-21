@@ -18,12 +18,12 @@ body {
 
 html,
 body,
-#root {
+#__next {
   height: 100%;
   width: 100%;
 }
 
-#root {
+#__next {
   display: flex;
   justify-content: center;
   align-items: center;
