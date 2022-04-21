@@ -28,7 +28,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="manifest" href="/manifest.json" />
-        <title>Cornelius Venti's Portfolio</title>
+        <title>{"Cornelius Venti's Portfolio"}</title>
       </Head>
       <Header theme={theme} onThemeChange={handleThemeChange} />
       <Terminal theme={theme} setPromptEl={setPromptEl} />
