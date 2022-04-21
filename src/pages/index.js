@@ -21,14 +21,8 @@ export default function Home() {
       onClick={() => promptEl.focus()}
     >
       <Head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="Cornelius Venti's Portfolio" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/logo192.png" />
-        <link rel="manifest" href="/manifest.json" />
-        <title>{"Cornelius Venti's Portfolio"}</title>
+        <meta name="description" content="Cornelius Venti - Portfolio" />
+        <title>Cornelius Venti</title>
       </Head>
       <Header theme={theme} onThemeChange={handleThemeChange} />
       <Terminal theme={theme} setPromptEl={setPromptEl} />
