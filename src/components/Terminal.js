@@ -1,6 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import useSound from "use-sound";
 import commands from "../assets/commands";
+import { usePromptElementContext } from "../context/PromptElementContext";
+import { useThemeContext } from "../context/ThemeContext";
 import styles from "../styles/Terminal.module.css";
 import Command from "./Command";
 
@@ -9,9 +11,10 @@ function Terminal(props) {
   const [history, setHistory] = useState([
     commands.find((command) => command.input === "welcome"),
   ]);
-  const [lastHistory, setLastHistory] = useState(null);
   const [prompt, setPrompt] = useState("");
-  let promptEl = useRef();
+  const [lastHistory, setLastHistory] = useState(null);
+  const [theme] = useThemeContext();
+  const [promptElement, setPromptElement] = usePromptElementContext();
 
   const handlePrompt = (event) => {
     setPrompt(event.target.value);
@@ -70,10 +73,11 @@ function Terminal(props) {
   };
 
   useEffect(() => {
-    props.setPromptEl(promptEl);
-    promptEl.focus();
-    promptEl.scrollIntoView({ behavior: "smooth" });
-  });
+    if (promptElement) {
+      promptElement.focus();
+      promptElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [prompt, promptElement]);
 
   useEffect(() => {
     if (history.length) {
@@ -86,12 +90,7 @@ function Terminal(props) {
   }, [lastHistory, history]);
 
   return (
-    <div
-      className={`${styles.terminal} ${
-        props.theme === "dark" ? styles.dark : ""
-      }`}
-      onClick={() => promptEl.focus()}
-    >
+    <div className={styles.terminal}>
       {Array.isArray(history)
         ? history.map((command, index) => {
             return <Command key={index} command={command} />;
@@ -100,16 +99,12 @@ function Terminal(props) {
       <div>
         <span className={styles.arrow}>{"-> "}</span>
         <input
-          className={`${styles.prompt} ${
-            props.theme === "dark" ? styles.dark : ""
-          }`}
+          className={`${styles.prompt} ${theme === "dark" ? styles.dark : ""}`}
           type="text"
           value={prompt}
           onChange={handlePrompt}
           onKeyDown={handleKeyDown}
-          ref={(el) => {
-            promptEl = el;
-          }}
+          ref={(element) => setPromptElement(element)}
         />
       </div>
     </div>

@@ -29,3 +29,29 @@ body,
   align-items: center;
   background-color: #abb8c3;
 }
+
+.container {
+  width: 60%;
+  height: 70%;
+  background-color: white;
+  color: #151718;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 30px rgba(0 0 0 / 20%);
+}
+
+.container.dark {
+  background-color: #151718;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+    min-height: 50%;
+    height: auto;
+    max-height: 80%;
+  }
+}
