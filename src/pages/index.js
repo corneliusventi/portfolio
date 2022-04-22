@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Terminal from "../components/Terminal";
 
 export default function Home() {
