@@ -22,8 +22,6 @@ function Header(props) {
       <div className={styles.title}>
         <Image
           className={styles.logo}
-          height={20}
-          width={20}
           alt="logo"
           src={theme === "dark" ? darklogo : lightlogo}
         />
@@ -33,8 +31,6 @@ function Header(props) {
         <Image
           className={styles.icon}
           src={theme === "dark" ? darkicon : lighticon}
-          height={20}
-          width={20}
           alt="theme icon"
           onClick={handleThemeChange}
         />
