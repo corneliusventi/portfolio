@@ -1,4 +1,4 @@
-@import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');
 
 * {
   box-sizing: border-box;
@@ -8,12 +8,6 @@ body {
   margin: 0;
   font-family: "Fira Code", monospace;
   font-weight: 500;
-}
-
-@supports (font-variation-settings: normal) {
-  body {
-    font-family: "Fira Code VF", monospace;
-  }
 }
 
 html,
