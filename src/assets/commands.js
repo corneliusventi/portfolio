@@ -1,37 +1,5 @@
 const commands = [
   {
-    input: "welcome",
-    output: {
-      type: "text",
-      text: `Welcome to Cornelius Venti's Portfolio (terminal style)
-
-      type "help" to start
-      `,
-    },
-  },
-  {
-    input: "help",
-    output: {
-      type: "text",
-      text: `welcome (welcome greeting to my portfolio)
-        help (show all commands)
-        clear (clear terminal)
-
-        about (show about me)
-        education (show my education)
-        experience (show my experience)
-        skill (show my skills)
-        project (show my projects)
-        resume (show my resume)
-        github (show my github profile)
-        social (show links to my social media profile)
-        contact (show contact me)
-
-        source (show source code of this portfolio)
-      `,
-    },
-  },
-  {
     input: "about",
     output: {
       type: "text",
@@ -40,6 +8,20 @@ const commands = [
       I want to keep learning and growing both my interpersonal and technical skills so that I can strive to be the most successful version of myself.
       `,
     },
+    page: true,
+    description: "about me",
+  },
+  {
+    input: "education",
+    output: {
+      type: "text",
+      text: `Universitas Tanjungpura
+        Bachelor of Computer Science, Informatics
+        Jun 2015 - Aug 2019
+      `,
+    },
+    page: true,
+    description: "my education",
   },
   {
     input: "experience",
@@ -55,16 +37,8 @@ const commands = [
         Feb 2018 - Feb 2020
       `,
     },
-  },
-  {
-    input: "education",
-    output: {
-      type: "text",
-      text: `Universitas Tanjungpura
-        Bachelor of Computer Science, Informatics
-        Jun 2015 - Aug 2019
-      `,
-    },
+    page: true,
+    description: "my experience",
   },
   {
     input: "skill",
@@ -73,14 +47,26 @@ const commands = [
       text: `HTML, CSS, Javascript, React.js, Next.js, Vue.js, Nuxt.js, Node.js, Express.js and Nest.js, 
       `,
     },
+    page: true,
+    description: "my skills",
   },
   {
-    input: "contact",
+    input: "project",
     output: {
-      type: "link",
-      text: "corneliusventi@gmail.com",
-      link: "mailto: corneliusventi@gmail.com",
+      type: "links",
+      links: [
+        {
+          text: "tic-tac-toe",
+          link: "https://nel-tictactoe.netlify.app/",
+        },
+        {
+          text: "portfolio",
+          link: "https://corneliusventi.dev/",
+        },
+      ],
     },
+    page: true,
+    description: "my projects",
   },
   {
     input: "resume",
@@ -89,6 +75,8 @@ const commands = [
       text: "corneliusventi.pdf",
       link: "/corneliusventi.pdf",
     },
+    page: true,
+    description: "my resume",
   },
   {
     input: "github",
@@ -97,14 +85,8 @@ const commands = [
       text: "corneliusventi",
       link: "https://github.com/corneliusventi",
     },
-  },
-  {
-    input: "source",
-    output: {
-      type: "link",
-      text: "repository",
-      link: "https://github.com/corneliusventi/portfolio",
-    },
+    page: true,
+    description: "my github profile",
   },
   {
     input: "social",
@@ -125,23 +107,63 @@ const commands = [
         },
       ],
     },
+    page: true,
+    description: "links to my social media profile",
   },
   {
-    input: "project",
+    input: "contact",
     output: {
-      type: "links",
-      links: [
-        {
-          text: "tic-tac-toe",
-          link: "https://nel-tictactoe.netlify.app/",
-        },
-        {
-          text: "portfolio",
-          link: "https://corneliusventi.dev/",
-        },
-      ],
+      type: "link",
+      text: "corneliusventi@gmail.com",
+      link: "mailto: corneliusventi@gmail.com",
     },
+    page: true,
+    description: "contact me",
+  },
+  {
+    input: "source",
+    output: {
+      type: "link",
+      text: "repository",
+      link: "https://github.com/corneliusventi/portfolio",
+    },
+    page: false,
+    description: "source code of this portfolio",
   },
 ];
 
-export default commands;
+const welcomeCommand = {
+  input: "welcome",
+  output: {
+    type: "text",
+    text: `Welcome to Cornelius Venti's Portfolio (terminal style)
+
+      type "help" to start
+      `,
+  },
+  page: false,
+};
+
+const helpCommand = {
+  input: "help",
+  output: {
+    type: "text",
+    text: `all commands:
+
+        welcome (welcome greeting to my portfolio)
+        help (show all commands)
+        clear (clear terminal)\n
+    `,
+  },
+  page: false,
+};
+
+commands.map((command) => {
+  if (command.input === "source") {
+    helpCommand.output.text += "\n";
+  }
+
+  helpCommand.output.text += `${command.input} (show ${command.description})\n`;
+});
+
+export default [welcomeCommand, helpCommand, ...commands];

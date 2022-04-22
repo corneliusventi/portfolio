@@ -15,9 +15,11 @@ export default function command({ command }) {
 }
 
 export async function getStaticPaths() {
-  const paths = commands.map((command) => ({
-    params: { command: command.input },
-  }));
+  const paths = commands
+    .filter((command) => command.page)
+    .map((command) => ({
+      params: { command: command.input },
+    }));
 
   return { paths, fallback: "blocking" };
 }
