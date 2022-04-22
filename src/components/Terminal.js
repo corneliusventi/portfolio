@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
+import useSWR from "swr";
 import useSound from "use-sound";
-import commands from "../assets/commands";
 import { usePromptElementContext } from "../context/PromptElementContext";
 import { useThemeContext } from "../context/ThemeContext";
 import styles from "../styles/Terminal.module.css";
+import { fetcher } from "../utils/fetcher";
 import Command from "./Command";
 
 function Terminal(props) {
+  const {
+    data: { commands },
+  } = useSWR("/api/commands", fetcher);
+
   const [beep] = useSound("/beep.mp3", { volume: 0.5 });
   const [history, setHistory] = useState([
     props.command || commands.find((command) => command.input === "welcome"),

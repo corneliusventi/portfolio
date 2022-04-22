@@ -1,7 +1,9 @@
 import { NextSeo } from "next-seo";
+import { SWRConfig } from "swr";
+import commands from "../assets/commands";
 import Terminal from "../components/Terminal";
 
-export default function Home() {
+function Home() {
   return (
     <>
       <NextSeo
@@ -11,4 +13,22 @@ export default function Home() {
       <Terminal />
     </>
   );
+}
+
+export default function Page({ fallback }) {
+  return (
+    <SWRConfig value={{ fallback }}>
+      <Home />
+    </SWRConfig>
+  );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      fallback: {
+        "/api/commands": { commands },
+      },
+    },
+  };
 }
