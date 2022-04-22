@@ -9,7 +9,7 @@ export default function command({ command }) {
         title={`Cornelius Venti - ${command.input}`}
         description={command.description}
       />
-      <Terminal command={command.input} />
+      <Terminal command={command} />
     </>
   );
 }
@@ -27,9 +27,17 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const command = commands.find((command) => command.input === params.command);
 
+  const notCommand = {
+    input: params.command,
+    output: {
+      type: "text",
+      text: `command "${params.command}" is not found`,
+    },
+  };
+
   return {
     props: {
-      command: command,
+      command: command || notCommand,
     },
   };
 }
