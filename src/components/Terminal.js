@@ -9,7 +9,7 @@ import Command from "./Command";
 function Terminal(props) {
   const [beep] = useSound("/beep.mp3", { volume: 0.5 });
   const [history, setHistory] = useState([
-    commands.find((command) => command.input === "welcome"),
+    commands.find((command) => command.input === (props.command || "welcome")),
   ]);
   const [prompt, setPrompt] = useState("");
   const [lastHistory, setLastHistory] = useState(null);
