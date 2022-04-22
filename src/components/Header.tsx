@@ -3,15 +3,16 @@ import darkicon from "../../public/darkicon.png";
 import darklogo from "../../public/darklogo.png";
 import lighticon from "../../public/lighticon.png";
 import lightlogo from "../../public/lightlogo.png";
-import { useThemeContext } from "../context/ThemeContext";
+import { useThemeContext } from "../context/Theme";
 import styles from "../styles/Header.module.css";
 
-function Header(props) {
-  const [theme, setTheme] = useThemeContext();
+export const Header = () => {
+  const { theme, setTheme } = useThemeContext();
 
   const handleThemeChange = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
+
   return (
     <header className={styles.header}>
       <div className={styles.controls}>
@@ -37,6 +38,4 @@ function Header(props) {
       </div>
     </header>
   );
-}
-
-export default Header;
+};

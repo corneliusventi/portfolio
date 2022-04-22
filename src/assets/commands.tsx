@@ -1,4 +1,6 @@
-const allCommands = [
+import { ICommand } from "../types/Command";
+
+export const allCommands: ICommand[] = [
   {
     input: "about",
     output: {
@@ -132,7 +134,7 @@ const allCommands = [
   },
 ];
 
-const welcomeCommand = {
+export const welcomeCommand: ICommand = {
   input: "welcome",
   output: {
     type: "text",
@@ -142,9 +144,10 @@ const welcomeCommand = {
       `,
   },
   page: false,
+  description: "welcome greeting",
 };
 
-const helpCommand = {
+export const helpCommand: ICommand = {
   input: "help",
   output: {
     type: "text",
@@ -156,14 +159,25 @@ const helpCommand = {
     `,
   },
   page: false,
+  description: "helper command",
 };
 
-allCommands.map((command) => {
-  if (command.input === "source") {
-    helpCommand.output.text += "\n";
-  }
+export const notFoundCommand: ICommand = {
+  input: "404",
+  output: {
+    type: "text",
+    text: "this page could not be found",
+  },
+  page: false,
+  description: "not found page",
+};
 
-  helpCommand.output.text += `${command.input} (show ${command.description})\n`;
+allCommands.map((command: ICommand) => {
+  if (helpCommand.output.type === "text") {
+    if (command.input === "source") helpCommand.output.text += "\n";
+
+    helpCommand.output.text += `${command.input} (show ${command.description})\n`;
+  }
 });
 
 export const commands = [welcomeCommand, helpCommand, ...allCommands];

@@ -1,8 +1,14 @@
 import styles from "../styles/Command.module.css";
+import { ICommand } from "../types/Command";
 
-function Command(props) {
+export interface ICommandProps {
+  command: ICommand;
+}
+
+export const Command = (props: ICommandProps) => {
   const command = props.command;
   let output;
+
   if (command.output.type === "text") {
     output = command.output.text;
   } else if (command.output.type === "link") {
@@ -32,6 +38,4 @@ function Command(props) {
       <div className={styles.output}>{output}</div>
     </div>
   );
-}
-
-export default Command;
+};
