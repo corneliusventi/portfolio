@@ -25,7 +25,7 @@ function Header(props) {
           alt="logo"
           src={theme === "dark" ? darklogo : lightlogo}
         />
-        <span>corneliusventi.dev</span>
+        <h1>Cornelius Venti</h1>
       </div>
       <div title="Theme" className={styles.theme}>
         <Image

@@ -6,6 +6,12 @@
   padding-bottom: 5px;
 }
 
+.input h2 {
+  font-size: 1em;
+  font-weight: inherit;
+  display: inline;
+}
+
 .output {
   position: relative;
   vertical-align: text-top;

@@ -27,7 +27,7 @@ function Command(props) {
     <div className={styles.command}>
       <div className={styles.input}>
         <span className={styles.arrow}>{"-> "}</span>
-        {command.input}
+        <h2>{command.input}</h2>
       </div>
       <div className={styles.output}>{output}</div>
     </div>
