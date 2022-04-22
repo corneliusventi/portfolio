@@ -1,8 +1,8 @@
 import Image from "next/image";
-import darkicon from "../assets/darkicon.png";
-import darklogo from "../assets/darklogo.png";
-import lighticon from "../assets/lighticon.png";
-import lightlogo from "../assets/lightlogo.png";
+import darkicon from "../../public/darkicon.png";
+import darklogo from "../../public/darklogo.png";
+import lighticon from "../../public/lighticon.png";
+import lightlogo from "../../public/lightlogo.png";
 import { useThemeContext } from "../context/ThemeContext";
 import styles from "../styles/Header.module.css";
 
@@ -23,8 +23,6 @@ function Header(props) {
         <Image
           className={styles.logo}
           alt="logo"
-          height="20"
-          width="20"
           src={theme === "dark" ? darklogo : lightlogo}
         />
         <span>corneliusventi.dev</span>
@@ -34,8 +32,6 @@ function Header(props) {
           className={styles.icon}
           src={theme === "dark" ? darkicon : lighticon}
           alt="theme icon"
-          height="20"
-          width="20"
           onClick={handleThemeChange}
         />
       </div>
