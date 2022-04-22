@@ -1,13 +1,13 @@
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import Terminal from "../components/Terminal";
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Cornelius Venti</title>
-        <meta name="description" content="Cornelius Venti - Portfolio" />
-      </Head>
+      <NextSeo
+        title="Cornelius Venti"
+        description="Cornelius Venti' Portfolio"
+      />
       <Terminal />
     </>
   );

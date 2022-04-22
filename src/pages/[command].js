@@ -1,15 +1,15 @@
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import commands from "../assets/commands";
 import Terminal from "../components/Terminal";
 
 export default function command({ command }) {
   return (
     <>
-      <Head>
-        <title>Cornelius Venti - {command}</title>
-        <meta name="description" content={`Cornelius Venti - ${command}`} />
-      </Head>
-      <Terminal command={command} />
+      <NextSeo
+        title={`Cornelius Venti - ${command.input}`}
+        description={command.description}
+      />
+      <Terminal command={command.input} />
     </>
   );
 }
@@ -23,9 +23,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  const command = commands.find((command) => command.input === params.command);
+
   return {
     props: {
-      command: params.command,
+      command: command,
     },
   };
 }
