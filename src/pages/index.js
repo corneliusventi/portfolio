@@ -1,6 +1,6 @@
 import { NextSeo } from "next-seo";
 import { SWRConfig } from "swr";
-import commands from "../assets/commands";
+import { commands } from "../assets/commands";
 import Terminal from "../components/Terminal";
 
 function Home() {

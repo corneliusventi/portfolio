@@ -1,4 +1,4 @@
-const commands = [
+const allCommands = [
   {
     input: "about",
     output: {
@@ -158,7 +158,7 @@ const helpCommand = {
   page: false,
 };
 
-commands.map((command) => {
+allCommands.map((command) => {
   if (command.input === "source") {
     helpCommand.output.text += "\n";
   }
@@ -166,4 +166,4 @@ commands.map((command) => {
   helpCommand.output.text += `${command.input} (show ${command.description})\n`;
 });
 
-export default [welcomeCommand, helpCommand, ...commands];
+export const commands = [welcomeCommand, helpCommand, ...allCommands];
