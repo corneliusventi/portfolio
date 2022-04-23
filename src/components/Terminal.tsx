@@ -41,7 +41,9 @@ export const Terminal = (props: ITerminalProps) => {
   };
 
   const handleEnter = () => {
-    let existingCommand = commands.find((command) => command.input === prompt);
+    const existingCommand = commands.find(
+      (command) => command.input === prompt
+    );
     const newCommand = existingCommand || {
       input: prompt,
       output: {

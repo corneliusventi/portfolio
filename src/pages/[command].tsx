@@ -71,7 +71,6 @@ export const getStaticProps: GetStaticProps<
         "/api/commands": { commands },
       },
     },
-    revalidate: 60,
   };
 };
 
