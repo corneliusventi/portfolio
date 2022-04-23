@@ -17,6 +17,21 @@ const Home: NextPage = () => {
       <NextSeo
         title="Cornelius Venti"
         description="Cornelius Venti' Portfolio"
+        additionalLinkTags={[
+          {
+            rel: "preconnect",
+            href: "https://fonts.googleapis.com",
+          },
+          {
+            rel: "preconnect",
+            href: "https://fonts.gstatic.com",
+            crossOrigin: "",
+          },
+          {
+            rel: "stylesheet",
+            href: "https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap",
+          },
+        ]}
       />
       <Terminal />
     </>

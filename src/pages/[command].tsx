@@ -31,6 +31,21 @@ const Command: NextPage<Props> = ({ command }) => {
       <NextSeo
         title={`Cornelius Venti - ${command.input}`}
         description={command.description}
+        additionalLinkTags={[
+          {
+            rel: "preconnect",
+            href: "https://fonts.googleapis.com",
+          },
+          {
+            rel: "preconnect",
+            href: "https://fonts.gstatic.com",
+            crossOrigin: "",
+          },
+          {
+            rel: "stylesheet",
+            href: "https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap",
+          },
+        ]}
       />
       <Terminal command={command} />
     </>
