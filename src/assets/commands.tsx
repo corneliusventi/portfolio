@@ -58,12 +58,16 @@ export const allCommands: ICommand[] = [
       type: "links",
       links: [
         {
-          text: "tic-tac-toe",
-          link: "https://nel-tictactoe.netlify.app/",
+          text: "Timeist",
+          link: "https://timeist.vercel.app/",
         },
         {
           text: "portfolio",
           link: "https://corneliusventi.dev/",
+        },
+        {
+          text: "tic-tac-toe",
+          link: "https://nel-tictactoe.netlify.app/",
         },
       ],
     },
