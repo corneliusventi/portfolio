@@ -38,6 +38,19 @@ const Home: NextPage<Props> = ({ command }) => {
             href: "https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap",
           },
         ]}
+        openGraph={{
+          type: "website",
+          url: "https://corneliusventi.dev",
+          title: "Cornelius Venti",
+          description: command.description,
+          images: [{ url: "https://corneliusventi.dev/cover.png" }],
+          site_name: "Cornelius Venti",
+        }}
+        twitter={{
+          handle: "@corneliusventi",
+          site: "@corneliusventi",
+          cardType: "summary_large_image",
+        }}
       />
       <Terminal />
     </>
