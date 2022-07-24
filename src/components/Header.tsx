@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import darkicon from "../../public/darkicon.png";
 import darklogo from "../../public/darklogo.png";
 import lighticon from "../../public/lighticon.png";
@@ -26,7 +27,7 @@ export const Header = () => {
           alt="logo"
           src={theme === "dark" ? darklogo : lightlogo}
         />
-        <h1>Cornelius Venti</h1>
+        <h1>corneliusventi.dev</h1>
       </div>
       <div title="Theme" className={styles.theme}>
         <Image

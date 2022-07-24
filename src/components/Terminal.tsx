@@ -1,11 +1,7 @@
-import {
-  ChangeEventHandler,
-  KeyboardEventHandler,
-  useEffect,
-  useState,
-} from "react";
+import { ChangeEventHandler, KeyboardEventHandler, useEffect, useState } from "react";
 import useSWR from "swr";
 import useSound from "use-sound";
+
 import { welcomeCommand } from "../assets/commands";
 import { usePromptElementContext } from "../context/PromptElement";
 import { useThemeContext } from "../context/Theme";
@@ -42,7 +38,7 @@ export const Terminal = (props: ITerminalProps) => {
 
   const handleEnter = () => {
     const existingCommand = commands.find(
-      (command) => command.input === prompt
+      (command) => command.input === prompt.trim().toLowerCase()
     );
     const newCommand = existingCommand || {
       input: prompt,

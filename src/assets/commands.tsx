@@ -5,9 +5,9 @@ export const allCommands: ICommand[] = [
     input: "about",
     output: {
       type: "text",
-      text: `Hi, I'm Cornelius Venti, a Full Stack Developer. I am from Pontianak, West Kalimantan, Indonesia. I love technology since I was in middle school. I have a passion for programming, solving problems and learning the latest technology. \n
-      I graduated from Tanjungpura University with a Bachelor of Computer Science. I graduated with an undergraduate thesis about "On Street and Off-Street Car Parking Management System Based on LBS and Google Maps API". \n
-      I want to keep learning and growing both my interpersonal and technical skills so that I can strive to be the most successful version of myself.
+      text: `I'm a Javascript Engineer with four years of Full Stack Development. I worked in industries such as Software House (2 years), E-commerce (1 year) and Insurance (2 years). \n
+        Skills that I learned during four years of Full Stack Development such as Typescript (2 years), Next.js (1 year), React.js (1 year), Nuxt.js (3 years), Vue.js (3 years), Nest.js (2 years), Node.js (1 year), HTML (4 years), CSS (4 years) and Javascript (4 years). \n
+        I already work on projects such as a regional financial management site, an online tax reporting site, a letter approval & electronic signature site, an e-commerce site, a lead generation form & microservice, a logging module, a partnership API, an email & report microservice and a promotion's back-office site.
       `,
     },
     page: true,
@@ -46,8 +46,8 @@ export const allCommands: ICommand[] = [
     input: "skill",
     output: {
       type: "text",
-      text: `HTML, CSS, Javascript, React.js, Next.js, Vue.js, Nuxt.js, Node.js, Express.js and Nest.js, 
-      `,
+      text: `Typescript (2 years), Next.js (1 year), React.js (1 year), Nuxt.js (3 years), Vue.js (3 years), Nest.js (2 years), Node.js (1 year), HTML (4 years), CSS (4 years) and Javascript (4 years).
+        `,
     },
     page: true,
     description: "my skills",
@@ -142,7 +142,9 @@ export const welcomeCommand: ICommand = {
   input: "welcome",
   output: {
     type: "text",
-    text: `Welcome to Cornelius Venti's Portfolio (terminal style)
+    text: `Cornelius Venti
+
+      Javascript Engineer | Full Stack Development | Typescript | Next.js | React.js | Nuxt.js | Vue.js | Nest.js | Node.js | HTML | CSS | Javascript
 
       type "help" to start
       `,
