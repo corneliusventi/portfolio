@@ -150,7 +150,8 @@ export const welcomeCommand: ICommand = {
       `,
   },
   page: false,
-  description: "welcome greeting",
+  description:
+    "Cornelius Venti - Javascript Engineer | Full Stack Development | Typescript | Next.js | React.js | Nuxt.js | Vue.js | Nest.js | Node.js | HTML | CSS | Javascript",
 };
 
 export const helpCommand: ICommand = {

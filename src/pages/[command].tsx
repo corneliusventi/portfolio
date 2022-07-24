@@ -1,11 +1,7 @@
-import {
-  GetStaticPaths,
-  GetStaticProps,
-  InferGetStaticPropsType,
-  NextPage,
-} from "next";
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { NextSeo } from "next-seo";
 import { SWRConfig } from "swr";
+
 import { commands, notFoundCommand } from "../assets/commands";
 import { Terminal } from "../components/Terminal";
 import { ICommand } from "../types/Command";
@@ -26,11 +22,20 @@ type StaticPropsResult = {
 };
 
 const Command: NextPage<Props> = ({ command }) => {
+  const titleCase = (str: string) => {
+    return str
+      .toLowerCase()
+      .split(" ")
+      .map(function (word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
+      .join(" ");
+  };
   return (
     <>
       <NextSeo
-        title={`Cornelius Venti - ${command.input}`}
-        description={command.description}
+        title={`Cornelius Venti - ${titleCase(command.input)}`}
+        description={titleCase(command.description)}
         additionalLinkTags={[
           {
             rel: "preconnect",
