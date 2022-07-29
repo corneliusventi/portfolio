@@ -59,7 +59,7 @@ export const allCommands: ICommand[] = [
       links: [
         {
           text: "Timeist",
-          link: "https://timeist.vercel.app/",
+          link: "https://timeist.corneliusventi.dev/",
         },
         {
           text: "portfolio",
