@@ -54,7 +54,7 @@ const Command: NextPage<Props> = ({ command }) => {
         openGraph={{
           type: "website",
           url: "https://corneliusventi.dev",
-          title: "Cornelius Venti",
+          title: `Cornelius Venti - ${titleCase(command.input)}`,
           description: titleCase(command.description),
           images: [{ url: "https://corneliusventi.dev/cover.png" }],
           site_name: "Cornelius Venti",
