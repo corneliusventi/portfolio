@@ -127,6 +127,20 @@ export const allCommands: ICommand[] = [
     description: "contact me",
   },
   {
+    input: "now",
+    output: {
+      type: "text",
+      text: `What I'm working on
+
+        Timeist
+      	I made a time blocking app with a minimalist look & feel, only time blocking one day at a time, customisable intervals and easy to organize without overlapping.
+        (Check it out: https://timeist.corneliusventi.dev)
+      `,
+    },
+    page: false,
+    description: "what i'm working on",
+  },
+  {
     input: "source",
     output: {
       type: "link",
