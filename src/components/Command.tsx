@@ -30,7 +30,12 @@ export const Command = (props: ICommandProps) => {
   }
 
   return (
-    <div className={styles.command}>
+    <div
+      onClick={(event) => {
+        event.stopPropagation();
+      }}
+      className={styles.command}
+    >
       <div className={styles.input}>
         <span className={styles.arrow}>{"-> "}</span>
         <h2>{command.input}</h2>
