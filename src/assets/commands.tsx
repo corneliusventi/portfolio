@@ -5,10 +5,7 @@ export const allCommands: ICommand[] = [
     input: "about",
     output: {
       type: "text",
-      text: `I'm a Javascript Engineer with four years of Full Stack Development. I worked in industries such as Software House (2 years), E-commerce (1 year) and Insurance (2 years). \n
-        Skills that I learned during four years of Full Stack Development such as Typescript (2 years), Next.js (1 year), React.js (1 year), Nuxt.js (3 years), Vue.js (3 years), Nest.js (2 years), Node.js (1 year), HTML (4 years), CSS (4 years) and Javascript (4 years). \n
-        I already work on projects such as a regional financial management site, an online tax reporting site, a letter approval & electronic signature site, an e-commerce site, a lead generation form & microservice, a logging module, a partnership API, an email & report microservice and a promotion's back-office site.
-      `,
+      text: `I'm a Frontend Developer with 4 years of experience in building responsive web design and I can collaborate with team members to ensure workloads are effective. Proficient with developing a good understanding and excellent performance in developing web-app using frameworks & libraries such as React and Vue.`,
     },
     page: true,
     description: "about me",
@@ -158,14 +155,14 @@ export const welcomeCommand: ICommand = {
     type: "text",
     text: `Cornelius Venti
 
-      Javascript Engineer | Full Stack Development | Typescript | Next.js | React.js | Nuxt.js | Vue.js | Nest.js | Node.js | HTML | CSS | Javascript
+      Frontend Developer | Frontend Development | Typescript | Next.js | React.js | Nuxt.js | Vue.js | Nest.js | Node.js | HTML | CSS | Javascript
 
       type "help" to start
       `,
   },
   page: false,
   description:
-    "Cornelius Venti - Javascript Engineer | Full Stack Development | Typescript | Next.js | React.js | Nuxt.js | Vue.js | Nest.js | Node.js | HTML | CSS | Javascript",
+    "Cornelius Venti - Frontend Developer | Frontend Development | Typescript | Next.js | React.js | Nuxt.js | Vue.js | Nest.js | Node.js | HTML | CSS | Javascript",
 };
 
 export const helpCommand: ICommand = {
