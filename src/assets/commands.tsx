@@ -56,7 +56,7 @@ export const allCommands: ICommand[] = [
       links: [
         {
           text: "Timeist",
-          link: "https://timeist.corneliusventi.dev/",
+          link: "https://timeist.app/",
         },
         {
           text: "portfolio",
@@ -131,7 +131,7 @@ export const allCommands: ICommand[] = [
 
         Timeist
       	I made a time blocking app with a minimalist look & feel, only time blocking one day at a time, customisable intervals and easy to organize without overlapping.
-        (Check it out: https://timeist.corneliusventi.dev)
+        (Check it out: https://timeist.app)
       `,
     },
     page: false,
