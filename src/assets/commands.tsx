@@ -5,7 +5,7 @@ export const allCommands: ICommand[] = [
     input: "about",
     output: {
       type: "text",
-      text: `I'm a Frontend Developer with 4 years of experience in building responsive web design and I can collaborate with team members to ensure workloads are effective. Proficient with developing a good understanding and excellent performance in developing web-app using frameworks & libraries such as React and Vue.`,
+      text: `Frontend Developer with 4+ years of experience building and maintaining responsive websites in Orange Multimedia, Satumarket and FWD Insurance. Recently, I delivered an e-commerce web from scratch in 3 months to kick start their journey and worked in FWD Group to help each region to create a coherence back office`,
     },
     page: true,
     description: "about me",
@@ -26,14 +26,27 @@ export const allCommands: ICommand[] = [
     input: "experience",
     output: {
       type: "text",
-      text: `Full Stack Developer - FWD Insurance Singapore
-        Oct 2020 - Present
+      text: `Full Stack Developer - FWD Group
+        Oct 2020 - Aug 2022
+        • Built Lead Generation Form using Vue.js and Nest.js in 3 months
+        • Built Logger Module For Microservice using Nest.js, Wiston and AWS Cloud Watch in 2 months
+        • Built Email/Report Microservice using Nestjs, HTML-PDF and SendGrid in 6 months
+        • Built Back Office Promotion Management using Nestjs, Nextjs and Material UI in 6 months
 
         Staff Development - Satumarket
         Feb 2020 - Sep 2020
+        • Built Local E-commerce at Pontianak from scratch using Nuxtjs, Vuetify, Vuex and Laravel in 3 months
+        • Built Back Office System for E-Commerce from scratch using Vue.js, Vuetify, Vuex, and Laravel in 3 months
 
         Web Developer - Orange Multimedia
-        Feb 2018 - Feb 2020
+        Aug 2018 - Feb 2020
+        • Built Letter System Based on Electronic Signatures using Bootstrap, jQuery and Laravel in 4 months
+        • Built Online Tax Reporting System using Bootstrap, jQuery and Laravel in 3 months
+        • Built Regional Financial Management Information System using Bootstrap, jQuery and Laravel in 1 year
+
+        Web Developer Intern - Orange Multimedia
+        Feb 2018 - Jul 2020
+        • Delivered a health data management system with 81 tables of resources in 6 months by componentizing to speed up the building process
       `,
     },
     page: true,
@@ -43,7 +56,7 @@ export const allCommands: ICommand[] = [
     input: "skill",
     output: {
       type: "text",
-      text: `Typescript (2 years), Next.js (1 year), React.js (1 year), Nuxt.js (3 years), Vue.js (3 years), Nest.js (2 years), Node.js (1 year), HTML (4 years), CSS (4 years) and Javascript (4 years).
+      text: `Typescript, Next.js, React.js, Nuxt.js, Vue.js, Nest.js, Node.js, HTML5, CSS3, Javascript, Git, Postman, SendGrid, Figma, Jira and Slack.
         `,
     },
     page: true,
@@ -55,16 +68,8 @@ export const allCommands: ICommand[] = [
       type: "links",
       links: [
         {
-          text: "Timeist",
+          text: "Timeist - Minimalist time blocking app",
           link: "https://timeist.app/",
-        },
-        {
-          text: "portfolio",
-          link: "https://corneliusventi.dev/",
-        },
-        {
-          text: "tic-tac-toe",
-          link: "https://nel-tictactoe.netlify.app/",
         },
       ],
     },
@@ -102,11 +107,11 @@ export const allCommands: ICommand[] = [
         },
         {
           text: "instagram: @corneliusventi",
-          link: "https://www.instagram.com/corneliusventi/",
+          link: "https://instagram.com/corneliusventi/",
         },
         {
           text: "linkedin: linkedin.com/in/corneliusventi",
-          link: "https://www.linkedin.com/in/corneliusventi",
+          link: "https://linkedin.com/in/corneliusventi",
         },
       ],
     },
@@ -155,14 +160,14 @@ export const welcomeCommand: ICommand = {
     type: "text",
     text: `Cornelius Venti
 
-      Frontend Developer | Frontend Development | Typescript | Next.js | React.js | Nuxt.js | Vue.js | Nest.js | Node.js | HTML | CSS | Javascript
+      Frontend Developer | Frontend Development | Typescript | Next.js | React.js | Nuxt.js | Vue.js | Nest.js | Node.js | HTML5 | CSS3 | Javascript
 
       type "help" to start
       `,
   },
   page: false,
   description:
-    "Cornelius Venti - Frontend Developer | Frontend Development | Typescript | Next.js | React.js | Nuxt.js | Vue.js | Nest.js | Node.js | HTML | CSS | Javascript",
+    "Cornelius Venti - Frontend Developer | Frontend Development | Typescript | Next.js | React.js | Nuxt.js | Vue.js | Nest.js | Node.js | HTML5 | CSS3 | Javascript",
 };
 
 export const helpCommand: ICommand = {
