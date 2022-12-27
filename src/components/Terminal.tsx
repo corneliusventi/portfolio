@@ -8,7 +8,7 @@ import {
 import useSWR from "swr";
 import useSound from "use-sound";
 
-import { menuCommand, welcomeCommand } from "../assets/commands";
+import { menuCommand, homeCommand } from "../assets/commands";
 import { usePromptElementContext } from "../context/PromptElement";
 import { useThemeContext } from "../context/Theme";
 import styles from "../styles/Terminal.module.css";
@@ -29,8 +29,8 @@ export const Terminal = (props: ITerminalProps) => {
 
   const [history, setHistory] = useState<ICommand[]>([
     props.command ||
-      commands.find((command) => command.input === "welcome") ||
-      welcomeCommand,
+      commands.find((command) => command.input === "home") ||
+      homeCommand,
     commands.find((command) => command.input === "menu") || menuCommand,
   ]);
   const [prompt, setPrompt] = useState("");
@@ -115,17 +115,16 @@ export const Terminal = (props: ITerminalProps) => {
 
   const handleMenu = (event: MouseEvent<HTMLAnchorElement>, menu: string) => {
     event.preventDefault();
-    const prompt = menu.replace("/", "");
 
     const existingCommand = commands.find(
-      (command) => command.input === prompt.trim().toLowerCase()
+      (command) => command.input === menu.trim().toLowerCase()
     );
 
     const newCommand = existingCommand || {
-      input: prompt,
+      input: menu,
       output: {
         type: "text",
-        text: `command "${prompt}" is not found`,
+        text: `command "${menu}" is not found`,
       },
       page: false,
       description: "command is not found",

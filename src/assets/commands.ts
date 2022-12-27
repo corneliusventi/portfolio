@@ -154,8 +154,8 @@ export const allCommands: ICommand[] = [
   },
 ];
 
-export const welcomeCommand: ICommand = {
-  input: "welcome",
+export const homeCommand: ICommand = {
+  input: "home",
   output: {
     type: "text",
     text: `Cornelius Venti
@@ -172,7 +172,7 @@ export const menuCommand: ICommand = {
   input: "menu",
   output: {
     type: "menu",
-    links: [],
+    links: [{ text: "home", link: "/" }],
   },
   page: false,
   description: "helper command",
@@ -197,4 +197,4 @@ allCommands.map((command: ICommand) => {
   }
 });
 
-export const commands = [welcomeCommand, menuCommand, ...allCommands];
+export const commands = [homeCommand, menuCommand, ...allCommands];

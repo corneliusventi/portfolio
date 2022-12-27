@@ -2,7 +2,7 @@ import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { NextSeo } from "next-seo";
 import { SWRConfig } from "swr";
 
-import { commands, welcomeCommand } from "../assets/commands";
+import { commands, homeCommand } from "../assets/commands";
 import { Terminal } from "../components/Terminal";
 import { ICommand } from "../types/Command";
 
@@ -69,11 +69,11 @@ const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 };
 
 export const getStaticProps: GetStaticProps<StaticPropsResult> = () => {
-  const command = commands.find((command) => command.input === "welcome");
+  const command = commands.find((command) => command.input === "home");
 
   return {
     props: {
-      command: command || welcomeCommand,
+      command: command || homeCommand,
       fallback: {
         "/api/commands": { commands },
       },
