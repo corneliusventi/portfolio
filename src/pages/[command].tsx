@@ -1,4 +1,9 @@
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+import {
+  GetStaticPaths,
+  GetStaticProps,
+  InferGetStaticPropsType,
+  NextPage,
+} from "next";
 import { NextSeo } from "next-seo";
 import { SWRConfig } from "swr";
 
@@ -36,6 +41,7 @@ const Command: NextPage<Props> = ({ command }) => {
       <NextSeo
         title={`Cornelius Venti - ${titleCase(command.input)}`}
         description={titleCase(command.description)}
+        canonical={`https://corneliusventi.dev/${command.input}`}
         additionalLinkTags={[
           {
             rel: "preconnect",
@@ -53,7 +59,7 @@ const Command: NextPage<Props> = ({ command }) => {
         ]}
         openGraph={{
           type: "website",
-          url: "https://corneliusventi.dev",
+          url: `https://corneliusventi.dev/${command.input}`,
           title: `Cornelius Venti - ${titleCase(command.input)}`,
           description: titleCase(command.description),
           images: [{ url: "https://corneliusventi.dev/cover.png" }],

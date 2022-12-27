@@ -23,6 +23,7 @@ const Home: NextPage<Props> = ({ command }) => {
       <NextSeo
         title="Cornelius Venti"
         description={command.description}
+        canonical="https://corneliusventi.dev"
         additionalLinkTags={[
           {
             rel: "preconnect",
