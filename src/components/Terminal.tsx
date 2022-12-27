@@ -1,8 +1,14 @@
-import { ChangeEventHandler, KeyboardEventHandler, useEffect, useState } from "react";
+import {
+  ChangeEventHandler,
+  KeyboardEventHandler,
+  MouseEvent,
+  useEffect,
+  useState,
+} from "react";
 import useSWR from "swr";
 import useSound from "use-sound";
 
-import { welcomeCommand } from "../assets/commands";
+import { menuCommand, welcomeCommand } from "../assets/commands";
 import { usePromptElementContext } from "../context/PromptElement";
 import { useThemeContext } from "../context/Theme";
 import styles from "../styles/Terminal.module.css";
@@ -25,6 +31,7 @@ export const Terminal = (props: ITerminalProps) => {
     props.command ||
       commands.find((command) => command.input === "welcome") ||
       welcomeCommand,
+    commands.find((command) => command.input === "menu") || menuCommand,
   ]);
   const [prompt, setPrompt] = useState("");
   const [lastHistory, setLastHistory] = useState<number | null>(null);
@@ -106,6 +113,28 @@ export const Terminal = (props: ITerminalProps) => {
     }
   };
 
+  const handleMenu = (event: MouseEvent<HTMLAnchorElement>, menu: string) => {
+    event.preventDefault();
+    const prompt = menu.replace("/", "");
+
+    const existingCommand = commands.find(
+      (command) => command.input === prompt.trim().toLowerCase()
+    );
+
+    const newCommand = existingCommand || {
+      input: prompt,
+      output: {
+        type: "text",
+        text: `command "${prompt}" is not found`,
+      },
+      page: false,
+      description: "command is not found",
+    };
+
+    setHistory((oldHistory) => [...oldHistory, newCommand]);
+    setLastHistory(null);
+  };
+
   useEffect(() => {
     if (promptElement) {
       promptElement.focus();
@@ -127,7 +156,9 @@ export const Terminal = (props: ITerminalProps) => {
     <div className={styles.terminal}>
       {Array.isArray(history)
         ? history.map((command, index) => {
-            return <Command key={index} command={command} />;
+            return (
+              <Command key={index} command={command} handleMenu={handleMenu} />
+            );
           })
         : ""}
       <div>

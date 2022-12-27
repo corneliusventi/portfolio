@@ -19,7 +19,12 @@ export interface IOutputLinks {
   links: ILink[];
 }
 
-export type IOutput = IOutputText | IOutputLink | IOutputLinks;
+export interface IOutputMenu {
+  type: "menu";
+  links: ILink[];
+}
+
+export type IOutput = IOutputText | IOutputLink | IOutputLinks | IOutputMenu;
 
 export interface ICommand {
   input: string;

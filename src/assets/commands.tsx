@@ -161,8 +161,6 @@ export const welcomeCommand: ICommand = {
     text: `Cornelius Venti
 
       Frontend Developer | Frontend Development | Typescript | Next.js | React.js | Nuxt.js | Vue.js | Nest.js | Node.js | HTML5 | CSS3 | Javascript
-
-      type "help" to start
       `,
   },
   page: false,
@@ -170,16 +168,11 @@ export const welcomeCommand: ICommand = {
     "Cornelius Venti - Frontend Developer | Frontend Development | Typescript | Next.js | React.js | Nuxt.js | Vue.js | Nest.js | Node.js | HTML5 | CSS3 | Javascript",
 };
 
-export const helpCommand: ICommand = {
-  input: "help",
+export const menuCommand: ICommand = {
+  input: "menu",
   output: {
-    type: "text",
-    text: `all commands:
-
-        welcome (welcome greeting to my portfolio)
-        help (show all commands)
-        clear (clear terminal)\n
-    `,
+    type: "menu",
+    links: [],
   },
   page: false,
   description: "helper command",
@@ -196,11 +189,12 @@ export const notFoundCommand: ICommand = {
 };
 
 allCommands.map((command: ICommand) => {
-  if (helpCommand.output.type === "text") {
-    if (command.input === "source") helpCommand.output.text += "\n";
-
-    helpCommand.output.text += `${command.input} (show ${command.description})\n`;
+  if (menuCommand.output.type === "menu") {
+    menuCommand.output.links.push({
+      text: command.input,
+      link: `/${command.input}`,
+    });
   }
 });
 
-export const commands = [welcomeCommand, helpCommand, ...allCommands];
+export const commands = [welcomeCommand, menuCommand, ...allCommands];

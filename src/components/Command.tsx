@@ -1,8 +1,10 @@
+import { MouseEvent, MouseEventHandler } from "react";
 import styles from "../styles/Command.module.css";
 import { ICommand } from "../types/Command";
 
 export interface ICommandProps {
   command: ICommand;
+  handleMenu: (event: MouseEvent<HTMLAnchorElement>, menu: string) => void;
 }
 
 export const Command = (props: ICommandProps) => {
@@ -24,6 +26,17 @@ export const Command = (props: ICommandProps) => {
           {link.text}
         </a>
       </div>
+    ));
+  } else if (command.output.type === "menu") {
+    output = command.output.links.map((link, index) => (
+      <a
+        onClick={(event) => props.handleMenu(event, link.text)}
+        className={styles.menu}
+        href={link.link}
+        key={index}
+      >
+        {link.text}
+      </a>
     ));
   } else {
     output = "output type not supported";
