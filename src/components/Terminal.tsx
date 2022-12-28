@@ -142,6 +142,12 @@ export const Terminal = (props: ITerminalProps) => {
   }, [prompt, promptElement]);
 
   useEffect(() => {
+    if (promptElement) {
+      promptElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [history, promptElement]);
+
+  useEffect(() => {
     if (history.length) {
       if (lastHistory !== null) {
         setPrompt(history[lastHistory]!.input);
