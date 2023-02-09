@@ -5,7 +5,7 @@ export const allCommands: ICommand[] = [
     input: "about",
     output: {
       type: "text",
-      text: `Frontend Developer with 4+ years of experience building and maintaining responsive websites in Orange Multimedia, Satumarket and FWD Insurance. Recently, I delivered an e-commerce web from scratch in 3 months to kick start their journey and worked in FWD Group to help each region to create a coherence back office`,
+      text: `Full Stack Developer with 4+ years of experience building and maintaining responsive websites in Orange Multimedia, Satumarket and FWD Insurance. Recently, I delivered an e-commerce web from scratch in 3 months to kick start their journey and worked in FWD Group to help each region to create a coherence back office`,
     },
     page: true,
     description: "about me",
@@ -160,12 +160,12 @@ export const homeCommand: ICommand = {
     type: "text",
     text: `Cornelius Venti
 
-      Frontend Developer | Frontend Development | Typescript | Next.js | React.js | Nuxt.js | Vue.js | Nest.js | Node.js | HTML5 | CSS3 | Javascript
+      Full Stack Developer | Typescript | Next.js | React.js | Tailwind CSS
       `,
   },
   page: false,
   description:
-    "Cornelius Venti - Frontend Developer | Frontend Development | Typescript | Next.js | React.js | Nuxt.js | Vue.js | Nest.js | Node.js | HTML5 | CSS3 | Javascript",
+    "Cornelius Venti - Full Stack Developer | Typescript | Next.js | React.js | Tailwind CSS",
 };
 
 export const menuCommand: ICommand = {
